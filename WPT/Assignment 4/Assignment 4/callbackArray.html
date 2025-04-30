@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<body>
+    <script>
+        function forEachElement(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i], i);
+  }
+}
+
+forEachElement([10, 20, 30, 40], function(element, index) {
+    console.log("Index " + index + ": " + (element * 2));
+});
+    </script>
+</body>

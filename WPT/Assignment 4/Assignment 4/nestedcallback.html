@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    function fetchData(url, callback) {
+        console.log("Fetching data from " + url);;
+
+      setTimeout(() => {
+        if (url.includes("error")) {
+          callback("Error: Failed to fetch data", null);
+        } else {
+          callback(null, "Simulated response data");
+        }
+      }, 1000);
+    }
+
+    function processData(data, callback) {
+      console.log("Processing data...");
+      setTimeout(() => {
+        const processedData = data;
+        callback(processedData);
+      }, 500);
+    }
+
+    fetchData("https://www.google.com", (error, response) => {
+      if (error) {
+        console.error("Fetch Error:", error);
+      } else {
+        processData(response, (processed) => {
+          console.log("Processed Data:", processed);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

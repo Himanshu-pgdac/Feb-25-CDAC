@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<body>
+    <script>
+        function fetchData(url, callback) {
+            console.log("Fetching data from " + url);
+            
+            setTimeout(() => {
+  callback("Simulated response data");
+}, 1000);
+}
+
+fetchData("https://www.google.com/", function(response) {
+  console.log("Received:", response);
+});
+
+    </script>
+</body>

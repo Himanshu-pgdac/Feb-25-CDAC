@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<body>
+    <script>
+
+function fetchData(url, callback) {
+    console.log("Fetching data from " + url);
+  
+    setTimeout(() => {
+    if (url.includes("error")) {
+      callback("Error: Failed to fetch data", null);
+    } else {
+      callback(null, "Simulated response data");
+    }
+  }, 1000);
+}
+  
+fetchData("https://www.google.com", (error, response) => {
+  if (error) {
+    console.error("Error:", error);
+  } else {
+    console.log("Response:", response);
+  }
+});
+
+fetchData("https://error.com", (error, response) => {
+  if (error) {
+    console.error("Error:", error);
+  } else {
+    console.log("Response:", response);
+  }
+});
+</script> </body>
+  
